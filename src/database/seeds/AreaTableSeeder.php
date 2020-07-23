@@ -1,0 +1,80 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class AreaTableSeeder extends Seeder
+{
+
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+        
+
+        \DB::table('area')->delete();
+        
+        \DB::table('area')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'nama' => 'Kategori Sistem Elektronik',
+                'deskripsi' => NULL,
+                'created_at' => '2020-05-26 03:21:19',
+                'updated_at' => '2020-05-26 03:21:19',
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'nama' => 'Tata Kelola Keamanan Informasi',
+                'deskripsi' => NULL,
+                'created_at' => '2020-05-26 03:21:36',
+                'updated_at' => '2020-05-26 03:21:36',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'nama' => 'Pengelolaan Resiko Keamanan Informasi',
+                'deskripsi' => NULL,
+                'created_at' => '2020-05-26 03:21:53',
+                'updated_at' => '2020-05-26 03:21:53',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'nama' => 'Kerangka Kerja Keamanan Informasi',
+                'deskripsi' => NULL,
+                'created_at' => '2020-05-26 03:22:13',
+                'updated_at' => '2020-05-26 03:22:13',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'nama' => 'Pengelolaan Aset Informasi',
+                'deskripsi' => NULL,
+                'created_at' => '2020-05-26 03:22:27',
+                'updated_at' => '2020-05-26 03:22:27',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'nama' => 'Teknologi dan Keamanan Informasi',
+                'deskripsi' => NULL,
+                'created_at' => '2020-05-26 03:22:43',
+                'updated_at' => '2020-05-26 03:22:43',
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'nama' => 'Suplemen',
+                'deskripsi' => NULL,
+                'created_at' => '2020-05-26 03:22:52',
+                'updated_at' => '2020-05-26 03:22:52',
+            ),
+        ));
+        
+        
+    }
+}
