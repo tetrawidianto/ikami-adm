@@ -1,0 +1,24 @@
+{
+    "name": "tetrawidianto/ikami-adm",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tetra Widianto",
+            "email": "tetraw86@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "IkamiAdm\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "IkamiAdm\\IkamiAdmServiceProvider"
+            ]
+        }
+    }
+}
