@@ -16,6 +16,7 @@ class CreatePredikatTable extends Migration
         Schema::create('predikat', function (Blueprint $table) {
             $table->id();
             $table->string('nama')->unique();
+            $table->string('warna')->nullable();
             $table->timestamps();
         });
     }

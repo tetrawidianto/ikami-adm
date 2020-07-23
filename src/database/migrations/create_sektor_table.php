@@ -17,6 +17,7 @@ class CreateSektorTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('akronim');
+            $table->string('warna')->nullable();
             $table->timestamps();
         });
     }

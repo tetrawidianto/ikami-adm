@@ -18,7 +18,7 @@ class CreateVersiTable extends Migration
             $table->string('kode')->unique();
             $table->text('deskripsi')->nullable();
             $table->boolean('is_active')->default(false);
-            $table->text('files')->nullable();
+            $table->text('lampiran')->nullable();
             $table->timestamps();
         });
     }

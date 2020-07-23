@@ -23,7 +23,9 @@ class CreateAspekSuplemenTable extends Migration
                 ->onDelete('cascade');
             $table->unsignedInteger('total')->default(0);
             $table->unsignedInteger('terjawab')->default(0);
+            $table->unsignedInteger('terjawab_baru')->default(0);
             $table->unsignedInteger('skor')->default(0);
+            $table->string('warna')->nullable();
             $table->timestamps();
         });
     }
