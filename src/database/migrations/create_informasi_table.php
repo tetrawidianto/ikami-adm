@@ -23,7 +23,7 @@ class CreateInformasiTable extends Migration
             $table->unsignedBigInteger('area_id');
             $table->foreign('area_id')->references('id')->on('area')
                 ->onDelete('cascade');
-
+            
             $table->unsignedBigInteger('aspek_id')->nullable();
             $table->foreign('aspek_id')->references('id')->on('aspek')
                     ->onDelete('cascade');

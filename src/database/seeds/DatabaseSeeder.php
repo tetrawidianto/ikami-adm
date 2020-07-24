@@ -31,6 +31,5 @@ class DatabaseSeeder extends Seeder
         $this->call(KategoriSistemElTableSeeder::class);
         $this->call(OpiniTableSeeder::class);
         $this->call(OpiniSistemElTableSeeder::class);
-        $this->call(DokumenTerkaitTableSeeder::class);
     }
 }

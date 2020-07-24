@@ -18,7 +18,7 @@ class CreateDokumenDaTable extends Migration
             $table->uuid('asesmen_id');
             $table->foreign('asesmen_id')->references('id')->on('asesmen')
                 ->onDelete('cascade');
-            $table->string('judul');
+            $table->string('judul_dokumen');
             $table->timestamps();
         });
     }

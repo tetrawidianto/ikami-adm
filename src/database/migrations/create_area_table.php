@@ -17,7 +17,7 @@ class CreateAreaTable extends Migration
             $table->id();
             $table->string('nama');
             $table->text('deskripsi')->nullable();
-            $table->string('warna')->nullable();
+            $table->string('badge')->nullable();
             $table->timestamps();
         });
     }

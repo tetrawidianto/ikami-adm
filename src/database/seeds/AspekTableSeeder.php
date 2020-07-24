@@ -25,6 +25,7 @@ class AspekTableSeeder extends Seeder
                 'area_id' => 7,
                 'created_at' => '2020-05-26 03:24:01',
                 'updated_at' => '2020-05-26 03:24:01',
+                'badge' => 'purple',
             ),
             1 => 
             array (
@@ -34,6 +35,7 @@ class AspekTableSeeder extends Seeder
                 'area_id' => 7,
                 'created_at' => '2020-05-26 03:24:53',
                 'updated_at' => '2020-05-26 03:24:53',
+                'badge' => 'orange',
             ),
             2 => 
             array (
@@ -43,6 +45,7 @@ class AspekTableSeeder extends Seeder
                 'area_id' => 7,
                 'created_at' => '2020-05-26 03:26:04',
                 'updated_at' => '2020-05-26 03:26:04',
+                'badge' => 'pink',
             ),
         ));
         

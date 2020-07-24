@@ -16,8 +16,8 @@ class CreateSektorTable extends Migration
         Schema::create('sektor', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('akronim');
-            $table->string('warna')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->string('badge')->nullable();
             $table->timestamps();
         });
     }

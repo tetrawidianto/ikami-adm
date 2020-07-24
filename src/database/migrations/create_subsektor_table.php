@@ -19,7 +19,7 @@ class CreateSubsektorTable extends Migration
             $table->foreign('sektor_id')->references('id')->on('sektor')
                 ->onDelete('cascade');
             $table->string('nama');
-            $table->string('akronim');
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }

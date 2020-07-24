@@ -14,7 +14,7 @@ class CreateSistemElTable extends Migration
     public function up()
     {
         Schema::create('sistem_el', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->unsignedBigInteger('penyedia_id');
             $table->foreign('penyedia_id')->references('id')->on('penyedia')
                 ->onDelete('cascade');

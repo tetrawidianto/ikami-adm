@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAsesmenUserTable extends Migration
+class CreatePenugasanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAsesmenUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('asesmen_user', function (Blueprint $table) {
+        Schema::create('penugasan', function (Blueprint $table) {
             $table->uuid('asesmen_id');
             $table->foreign('asesmen_id')->references('id')->on('asesmen')
                 ->onDelete('cascade');
@@ -31,6 +31,6 @@ class CreateAsesmenUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asesmen_user');
+        Schema::dropIfExists('penugasan');
     }
 }

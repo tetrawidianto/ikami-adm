@@ -16,11 +16,11 @@ class CreatePenyediaTable extends Migration
         Schema::create('penyedia', function (Blueprint $table) {
             $table->id();
             $table->string('nama')->unique();
-            $table->string('nama_alias');
+            $table->string('nama_panjang');
             $table->text('alamat');
             $table->string('website');
             $table->string('email');
-            $table->string('telepon');
+            $table->string('nomor_telepon');
             $table->unsignedBigInteger('inisiator_id');
             $table->string('inisiator_type');
             $table->timestamps();

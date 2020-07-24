@@ -46,7 +46,7 @@ class OpiniTableSeeder extends Seeder
                 'id' => 4,
                 'nama' => 'BAIK',
                 'created_at' => '2020-06-04 11:25:17',
-                'updated_at' => '2020-06-04 11:25:17',
+                'updated_at' => '2020-07-06 23:22:21',
                 'color' => 'success',
             ),
         ));

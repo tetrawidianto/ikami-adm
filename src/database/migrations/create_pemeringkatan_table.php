@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeringkatTable extends Migration
+class CreatePemeringkatanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePeringkatTable extends Migration
      */
     public function up()
     {
-        Schema::create('peringkat', function (Blueprint $table) {
+        Schema::create('pemeringkatan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('kematangan_baru_id');
             $table->foreign('kematangan_baru_id')->references('id')->on('kematangan_baru')
@@ -37,6 +37,6 @@ class CreatePeringkatTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peringkat');
+        Schema::dropIfExists('pemeringkatan');
     }
 }

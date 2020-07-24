@@ -18,7 +18,7 @@ class CreateAsesiTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('sistem_el_id');
+            $table->uuid('sistem_el_id');
             $table->foreign('sistem_el_id')->references('id')->on('sistem_el')
                 ->onDelete('cascade');
             $table->string('surat_tugas');

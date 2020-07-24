@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePredikatTable extends Migration
+class CreateDokumenTerkaitTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreatePredikatTable extends Migration
      */
     public function up()
     {
-        Schema::create('predikat', function (Blueprint $table) {
+        Schema::create('dokumen_terkait', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->unique();
-            $table->string('warna')->nullable();
+            $table->unsignedBigInteger('area_id');
+            $table->foreign('area_id')->references('id')->on('area')
+                ->onDelete('cascade');
+            $table->string('nama');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreatePredikatTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('predikat');
+        Schema::dropIfExists('dokumen_terkait');
     }
 }

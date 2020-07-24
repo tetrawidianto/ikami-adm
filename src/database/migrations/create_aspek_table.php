@@ -20,6 +20,7 @@ class CreateAspekTable extends Migration
             $table->unsignedBigInteger('area_id');
             $table->foreign('area_id')->references('id')->on('area')
                 ->onDelete('cascade');
+                $table->string('badge')->nullable();
             $table->timestamps();
         });
     }

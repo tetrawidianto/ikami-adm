@@ -18,7 +18,7 @@ class CreateKategoriSistemElTable extends Migration
             $table->string('nama')->unique();
             $table->unsignedInteger('nilai_min');
             $table->unsignedInteger('nilai_mak');
-            $table->string('warna')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

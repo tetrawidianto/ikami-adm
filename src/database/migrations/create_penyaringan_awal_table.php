@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSaringanAwalTable extends Migration
+class CreatePenyaringanAwalTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSaringanAwalTable extends Migration
      */
     public function up()
     {
-        Schema::create('saringan_awal', function (Blueprint $table) {
+        Schema::create('penyaringan_awal', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('kesiapan_id');
             $table->foreign('kesiapan_id')->references('id')->on('kesiapan')
@@ -35,6 +35,6 @@ class CreateSaringanAwalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('saringan_awal');
+        Schema::dropIfExists('penyaringan_awal');
     }
 }

@@ -24,6 +24,7 @@ class AreaTableSeeder extends Seeder
                 'deskripsi' => NULL,
                 'created_at' => '2020-05-26 03:21:19',
                 'updated_at' => '2020-05-26 03:21:19',
+                'badge' => NULL,
             ),
             1 => 
             array (
@@ -32,6 +33,7 @@ class AreaTableSeeder extends Seeder
                 'deskripsi' => NULL,
                 'created_at' => '2020-05-26 03:21:36',
                 'updated_at' => '2020-05-26 03:21:36',
+                'badge' => 'info',
             ),
             2 => 
             array (
@@ -40,6 +42,7 @@ class AreaTableSeeder extends Seeder
                 'deskripsi' => NULL,
                 'created_at' => '2020-05-26 03:21:53',
                 'updated_at' => '2020-05-26 03:21:53',
+                'badge' => 'danger',
             ),
             3 => 
             array (
@@ -48,6 +51,7 @@ class AreaTableSeeder extends Seeder
                 'deskripsi' => NULL,
                 'created_at' => '2020-05-26 03:22:13',
                 'updated_at' => '2020-05-26 03:22:13',
+                'badge' => 'primary',
             ),
             4 => 
             array (
@@ -56,6 +60,7 @@ class AreaTableSeeder extends Seeder
                 'deskripsi' => NULL,
                 'created_at' => '2020-05-26 03:22:27',
                 'updated_at' => '2020-05-26 03:22:27',
+                'badge' => 'success',
             ),
             5 => 
             array (
@@ -64,6 +69,7 @@ class AreaTableSeeder extends Seeder
                 'deskripsi' => NULL,
                 'created_at' => '2020-05-26 03:22:43',
                 'updated_at' => '2020-05-26 03:22:43',
+                'badge' => 'warning',
             ),
             6 => 
             array (
@@ -71,7 +77,8 @@ class AreaTableSeeder extends Seeder
                 'nama' => 'Suplemen',
                 'deskripsi' => NULL,
                 'created_at' => '2020-05-26 03:22:52',
-                'updated_at' => '2020-05-26 03:22:52',
+                'updated_at' => '2020-07-06 11:54:21',
+                'badge' => NULL,
             ),
         ));
         

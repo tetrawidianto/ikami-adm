@@ -15,9 +15,6 @@ class CreateJawabanTable extends Migration
     {
         Schema::create('jawaban', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pilihan_id');
-            $table->foreign('pilihan_id')->references('id')->on('pilihan')
-                ->onDelete('cascade');
             $table->string('teks');
             $table->unsignedInteger('nilai');
             $table->timestamps();

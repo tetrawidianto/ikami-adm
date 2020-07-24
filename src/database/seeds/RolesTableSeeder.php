@@ -20,50 +20,42 @@ class RolesTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'name' => 'Verifikator',
+                'name' => 'verifikator',
                 'guard_name' => 'web',
                 'created_at' => '2020-05-21 10:21:17',
-                'updated_at' => '2020-05-21 10:21:17',
+                'updated_at' => '2020-07-07 00:41:34',
             ),
             1 => 
             array (
                 'id' => 2,
-                'name' => 'Pengguna',
+                'name' => 'pengguna',
                 'guard_name' => 'web',
                 'created_at' => '2020-05-21 10:31:32',
-                'updated_at' => '2020-05-21 10:31:32',
+                'updated_at' => '2020-07-07 00:41:22',
             ),
             2 => 
             array (
-                'id' => 3,
-                'name' => 'Bakal Calon Pengguna',
+                'id' => 5,
+                'name' => 'asesor',
                 'guard_name' => 'web',
-                'created_at' => '2020-05-24 23:17:29',
-                'updated_at' => '2020-05-25 16:53:36',
+                'created_at' => '2020-06-06 13:55:47',
+                'updated_at' => '2020-07-07 00:40:46',
             ),
             3 => 
             array (
-                'id' => 4,
-                'name' => 'Calon Pengguna',
+                'id' => 6,
+                'name' => 'admin',
                 'guard_name' => 'web',
-                'created_at' => '2020-05-25 16:53:49',
-                'updated_at' => '2020-05-25 16:53:49',
+                'created_at' => '2020-06-15 12:44:01',
+                'updated_at' => '2020-07-07 00:40:38',
             ),
             4 => 
             array (
-                'id' => 5,
-                'name' => 'Asesor',
+                'id' => 7,
+                'name' => 'pimpinan',
                 'guard_name' => 'web',
-                'created_at' => '2020-06-06 13:55:47',
-                'updated_at' => '2020-06-06 13:55:47',
-            ),
-            5 => 
-            array (
-                'id' => 6,
-                'name' => 'Admin',
-                'guard_name' => 'web',
-                'created_at' => '2020-06-15 12:44:01',
-                'updated_at' => '2020-06-15 12:44:01',
+                'created_at' => '2020-07-13 14:40:19',
+                'updated_at' => '2020-07-13 14:40:19',
             ),
         ));
         

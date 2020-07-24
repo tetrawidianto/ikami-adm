@@ -8,7 +8,10 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "goldspecdigital/laravel-eloquent-uuid": "^7.0",
+        "spatie/laravel-model-status": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "IkamiAdm\\": "src/"

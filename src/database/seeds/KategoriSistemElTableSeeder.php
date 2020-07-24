@@ -44,7 +44,7 @@ class KategoriSistemElTableSeeder extends Seeder
                 'nilai_min' => 35,
                 'nilai_mak' => 50,
                 'created_at' => '2020-06-04 11:15:47',
-                'updated_at' => '2020-06-04 11:15:47',
+                'updated_at' => '2020-07-06 12:59:31',
                 'color' => 'danger',
             ),
         ));
