@@ -51,7 +51,7 @@ class IkamiAdmServiceProvider extends ServiceProvider
             __DIR__.'/database/migrations/create_penugasan_table.php' => database_path('migrations/'.date('Y_m_d_His', strtotime('2021-01-17 00:00:28')).'_create_penugasan_table.php'),
             __DIR__.'/database/migrations/create_dokumen_da_table.php' => database_path('migrations/'.date('Y_m_d_His', strtotime('2021-01-17 00:00:29')).'_create_dokumen_da_table.php'),
             __DIR__.'/database/migrations/create_statuses_table.php' => database_path('migrations/'.date('Y_m_d_His', strtotime('2021-01-17 00:00:30')).'_create_statuses_table.php'),
-        ], 'ikami-migration');
+        ], 'ikami-adm-migration');
 
         $this->publishes([
             __DIR__.'/database/seeds/AreaTableSeeder.php' => database_path('seeds/AreaTableSeeder.php'),
@@ -74,7 +74,7 @@ class IkamiAdmServiceProvider extends ServiceProvider
             __DIR__.'/database/seeds/RoleHasPermissionsTableSeeder.php' => database_path('seeds/RoleHasPermissionsTableSeeder.php'),
             __DIR__.'/database/seeds/RolesTableSeeder.php' => database_path('seeds/RolesTableSeeder.php'),
             __DIR__.'/database/seeds/VersiTableSeeder.php' => database_path('seeds/VersiTableSeeder.php'),
-        ], 'ikami-seed');
+        ], 'ikami-adm-seed');
     }
 
     private function backpackRoute()
