@@ -27,4 +27,9 @@ class Aspek extends Model
     {
         return $this->hasMany('IkamiAdm\Models\AspekSuplemen');
     }
+
+    public function area()
+    {
+        return $this->belongsTo('IkamiAdm\Models\Area');
+    }
 }
