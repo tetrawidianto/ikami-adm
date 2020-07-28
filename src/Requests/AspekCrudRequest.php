@@ -4,6 +4,7 @@ namespace IkamiAdm\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class AspekCrudRequest extends FormRequest
 {
@@ -26,7 +27,12 @@ class AspekCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'area_id' => 'required',
+            'nama' => ['required',
+                Rule::unique('aspek')->ignore($this->id)->where(function ($query) {
+                return $query->where('area_id', $this->area_id);
+                })],
+            'badge' => 'required'
         ];
     }
 

@@ -4,6 +4,7 @@ namespace IkamiAdm\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class PenyaringanCrudRequest extends FormRequest
 {
@@ -26,7 +27,12 @@ class PenyaringanCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'kesiapan_id' => [
+                    'required',
+                    Rule::unique('penyaringan_awal')->ignore($this->id),
+                ],
+            'pilihan_id' => 'required',
+            'jawaban_id' => 'required'
         ];
     }
 

@@ -4,6 +4,7 @@ namespace IkamiAdm\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class VersiCrudRequest extends FormRequest
 {
@@ -26,7 +27,11 @@ class VersiCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'kode' => [
+                    'required',
+                    Rule::unique('versi')->ignore($this->id),
+                ],
+            'deskripsi' => 'required'
         ];
     }
 

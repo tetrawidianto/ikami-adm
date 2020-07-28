@@ -15,7 +15,7 @@ class CreateSektorTable extends Migration
     {
         Schema::create('sektor', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama')->unique();
             $table->text('deskripsi')->nullable();
             $table->string('badge')->nullable();
             $table->timestamps();

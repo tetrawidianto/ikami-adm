@@ -63,13 +63,13 @@ class PenyediaCrudController extends CrudController
         $this->crud->setValidation(PenyediaCrudRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->addFields();
     }
 
     protected function setupUpdateOperation()
     {
-        // $this->setupCreateOperation();
-        $this->addFields();
+        $this->setupCreateOperation();
     }
 
     private function addFields()

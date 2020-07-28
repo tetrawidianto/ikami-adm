@@ -22,6 +22,7 @@ class CreateAspekTable extends Migration
                 ->onDelete('cascade');
                 $table->string('badge')->nullable();
             $table->timestamps();
+            $table->unique(['area_id', 'nama']);
         });
     }
 

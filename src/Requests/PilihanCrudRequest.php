@@ -4,8 +4,9 @@ namespace IkamiAdm\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class PilihanGandaCrudRequest extends FormRequest
+class PilihanCrudRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +27,11 @@ class PilihanGandaCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'nama' => [
+                    'required',
+                    Rule::unique('pilihan')->ignore($this->id),
+                ],
+            'jawaban' => 'required'
         ];
     }
 

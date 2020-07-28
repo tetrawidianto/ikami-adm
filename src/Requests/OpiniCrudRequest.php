@@ -4,6 +4,7 @@ namespace IkamiAdm\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class OpiniCrudRequest extends FormRequest
 {
@@ -26,7 +27,11 @@ class OpiniCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'nama' => [
+                    'required',
+                    Rule::unique('opini')->ignore($this->id),
+                ],
+            'color' => 'required'
         ];
     }
 

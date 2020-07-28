@@ -26,7 +26,11 @@ class PemeringkatanCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'kematangan_baru_id' => 'required',
+            'kematangan_id' => 'required',
+            'kesiapan_id' => 'required',
+            'jawaban' => 'required',
+            'proporsi' => 'required'
         ];
     }
 

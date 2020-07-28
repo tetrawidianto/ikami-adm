@@ -83,20 +83,36 @@ class AsesmenCrudController extends CrudController
 
         // TODO: remove setFromDb() and manually define Fields
         // $this->crud->setFromDb();
+        $this->addFields();
+    }
+
+    protected function setupUpdateOperation()
+    {
+        $this->setupCreateOperation();
+    }
+
+    private function addFields()
+    {
         $this->crud->addFields([
             [
                 'name' => 'sistem_el_id',
                 'type' => 'select2',
                 'entity' => 'sistemEl',
                 'attribute' => 'nama',
-                'model' => 'IkamiAdm\Models\SistemEl'
+                'model' => 'IkamiAdm\Models\SistemEl',
+                'attributes' => [
+                    'disabled' => true
+                ]
             ],
             [
                 'name' => 'versi_id',
                 'type' => 'select2',
                 'entity' => 'versi',
                 'attribute' => 'kode',
-                'model' => 'IkamiAdm\Models\Versi'
+                'model' => 'IkamiAdm\Models\Versi',
+                'attributes' => [
+                    'disabled' => true
+                ]
             ],
             [
                 'name' => 'jadwal',
@@ -104,6 +120,10 @@ class AsesmenCrudController extends CrudController
             ],
             [
                 'name' => 'tempat',
+                'type' => 'text',
+            ],
+            [
+                'name' => 'location',
                 'type' => 'text',
             ],
             [
@@ -123,6 +143,9 @@ class AsesmenCrudController extends CrudController
                 'entity' => 'kategoriSistemEl',
                 'attribute' => 'nama',
                 'model' => 'IkamiAdm\Models\KategoriSistemEl',
+                'attributes' => [
+                    'disabled' => true
+                ]
             ],
             [
                 'name' => 'opini_id',
@@ -130,12 +153,10 @@ class AsesmenCrudController extends CrudController
                 'entity' => 'Opini',
                 'attribute' => 'nama',
                 'model' => 'IkamiAdm\Models\Opini',
+                'attributes' => [
+                    'disabled' => true
+                ]
             ],
         ]);
-    }
-
-    protected function setupUpdateOperation()
-    {
-        $this->setupCreateOperation();
     }
 }

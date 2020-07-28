@@ -71,19 +71,19 @@ class AspekCrudController extends CrudController
     {
         $this->crud->addFields([
             [
+                'name' => 'area_id',
+                'type' => 'select2',
+                'entity' => 'area',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Area'
+            ],
+            [
                 'name' => 'nama',
                 'type' => 'text'
             ],
             [
                 'name' => 'deskripsi',
                 'type' => 'textarea'
-            ],
-            [
-                'name' => 'area_id',
-                'type' => 'select2',
-                'entity' => 'area',
-                'attribute' => 'nama',
-                'model' => 'IkamiAdm\Models\Area'
             ],
             [
                 'name' => 'badge',

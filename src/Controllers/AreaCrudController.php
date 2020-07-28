@@ -54,7 +54,11 @@ class AreaCrudController extends CrudController
                 'attribute' => 'kode',
                 'model' => 'IkamiAdm\Models\Versi',
                 'pivot' => true
-            ]
+            ],
+            [
+                'name' => 'badge',
+                'type' => 'text'
+            ],
         ]);
     }
 

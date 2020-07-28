@@ -4,7 +4,7 @@ namespace IkamiAdm\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use IkamiAdm\Requests\PilihanGandaCrudRequest;
+use IkamiAdm\Requests\PilihanCrudRequest;
 
 /**
  * Class PilihanCrudController
@@ -34,7 +34,7 @@ class PilihanCrudController extends CrudController
 
     protected function setupCreateOperation()
     {
-        $this->crud->setValidation(PilihanGandaCrudRequest::class);
+        $this->crud->setValidation(PilihanCrudRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
         // $this->crud->setFromDb();

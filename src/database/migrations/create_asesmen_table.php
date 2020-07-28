@@ -44,7 +44,7 @@ class CreateAsesmenTable extends Migration
             $table->unsignedInteger('terjawab_baru')->default(0);
             $table->unsignedInteger('terjawab_utama_baru')->default(0);
             $table->unsignedInteger('terjawab_suplemen_baru')->default(0);
-            $table->time('waktu')->nullable();
+            // $table->time('waktu')->nullable();
             $table->boolean('terkunci')->default(true);
             $table->string('kode_akses')->nullable();
             $table->string('location')->nullable();

@@ -4,6 +4,7 @@ namespace IkamiAdm\Requests;
 
 use IkamiAdm\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class KategoriSistemElCrudRequest extends FormRequest
 {
@@ -26,7 +27,13 @@ class KategoriSistemElCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'nama' => [
+                    'required',
+                    Rule::unique('kategori_sistem_el')->ignore($this->id),
+                ],
+            'nilai_min' => 'required',
+            'nilai_mak' => 'required',
+            'color' => 'required'
         ];
     }
 

@@ -4,6 +4,7 @@ namespace IkamiAdm\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class SistemElCrudRequest extends FormRequest
 {
@@ -26,7 +27,12 @@ class SistemElCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'penyedia_id' => 'required',
+            'nama' => ['required',
+                Rule::unique('sistem_el')->ignore($this->id)->where(function ($query) {
+                return $query->where('penyedia_id', $this->penyedia_id);
+                })],
+            'deskripsi' => 'required',
         ];
     }
 

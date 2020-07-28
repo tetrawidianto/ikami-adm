@@ -15,7 +15,7 @@ class SistemElCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     // use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation { edit as traitEdit; }
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     // use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
@@ -32,19 +32,19 @@ class SistemElCrudController extends CrudController
         // $this->crud->setFromDb();
         $this->crud->setColumns([
             [
-                'name' => 'penyedia_id',
-                'type' => 'select',
-                'entity' => 'penyedia',
-                'attribute' => 'nama',
-                'model' => 'IkamiAdm\Models\Penyedia'
-            ],
-            [
                 'name' => 'nama',
                 'type' => 'text'
             ],
             [
                 'name' => 'deskripsi',
                 'type' => 'text'
+            ],
+            [
+                'name' => 'penyedia_id',
+                'type' => 'select',
+                'entity' => 'penyedia',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Penyedia'
             ],
             [
                 'name' => 'sektor_id',
@@ -61,13 +61,26 @@ class SistemElCrudController extends CrudController
         $this->crud->setValidation(SistemElCrudRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->addFields();
     }
 
     protected function setupUpdateOperation()
     {
-        // $this->setupCreateOperation();
-        $this->addFields();
+        $this->setupCreateOperation();
+    }
+
+    public function edit($id)
+    {
+        $entry = $this->crud->getEntry($id);
+
+        $this->crud->modifyField('penyedia_id', [
+            'options' => (function ($query) use ($entry) {
+                return $query->where('id', $entry->penyedia_id)->get();
+            }),
+        ]);
+
+        return $this->traitEdit($id);
     }
 
     private function addFields()
@@ -78,7 +91,7 @@ class SistemElCrudController extends CrudController
                 'type' => 'select2',
                 'entity' => 'penyedia',
                 'attribute' => 'nama',
-                'model' => 'IkamiAdm\Models\Penyedia'
+                'model' => 'IkamiAdm\Models\Penyedia',
             ],
             [
                 'name' => 'nama',
@@ -86,7 +99,7 @@ class SistemElCrudController extends CrudController
             ],
             [
                 'name' => 'deskripsi',
-                'type' => 'text'
+                'type' => 'textarea'
             ],
             [
                 'name' => 'sektor_id',

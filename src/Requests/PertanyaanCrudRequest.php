@@ -4,6 +4,7 @@ namespace IkamiAdm\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class PertanyaanCrudRequest extends FormRequest
 {
@@ -26,7 +27,14 @@ class PertanyaanCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'kode' => [
+                    'required',
+                    Rule::unique('pertanyaan')->ignore($this->id),
+                ],
+            'teks' => 'required',
+            'area_id' => 'required',
+            'pilihan_id' => 'required',
+            'jawaban_0' => 'required',
         ];
     }
 

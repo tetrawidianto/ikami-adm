@@ -15,7 +15,7 @@ class PenggunaCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     // use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+    // use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     // use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
@@ -58,27 +58,6 @@ class PenggunaCrudController extends CrudController
 
     protected function setupUpdateOperation()
     {
-        // $this->setupCreateOperation();
-        $this->addFields();
-    }
-
-    private function addFields()
-    {
-        $this->crud->addFields([
-            [
-                'name' => 'user_id',
-                'type' => 'select2',
-                'entity' => 'user',
-                'attribute' => 'name',
-                'model' => 'IkamiAdm\Models\User'
-            ],
-            [
-                'name' => 'penyedia_id',
-                'type' => 'select2',
-                'entity' => 'penyedia',
-                'attribute' => 'nama',
-                'model' => 'IkamiAdm\Models\Penyedia'
-            ]
-        ]);
+        $this->setupCreateOperation();
     }
 }

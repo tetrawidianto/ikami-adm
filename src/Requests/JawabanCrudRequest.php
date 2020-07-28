@@ -26,7 +26,8 @@ class JawabanCrudRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'teks' => 'required',
+            'nilai' => 'required|integer'
         ];
     }
 
