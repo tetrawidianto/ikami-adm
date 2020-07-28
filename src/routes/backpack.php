@@ -25,3 +25,10 @@ Route::crud('informasi', 'InformasiCrudController');
 Route::crud('area-utama', 'AreaUtamaCrudController');
 Route::crud('aspek-suplemen', 'AspekSuplemenCrudController');
 Route::crud('sektor', 'SektorCrudController');
+
+Route::group(['prefix' => 'api'], function() {
+	Route::post('jawaban', 'JawabanAjaxController@index');
+	Route::post('jawaban/{id}', 'JawabanAjaxController@show');
+	Route::post('aspek', 'AspekAjaxController@index');
+	Route::post('aspek/{id}', 'AspekAjaxController@show');
+});

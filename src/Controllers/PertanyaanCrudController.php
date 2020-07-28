@@ -124,12 +124,25 @@ class PertanyaanCrudController extends CrudController
                 'attribute' => 'nama',
                 'model' => 'IkamiAdm\Models\Area'
             ],
+            // [
+            //     'name' => 'aspek_id',
+            //     'type' => 'select2',
+            //     'entity' => 'aspek',
+            //     'attribute' => 'nama',
+            //     'model' => 'IkamiAdm\Models\Aspek'
+            // ],
             [
-                'name' => 'aspek_id',
-                'type' => 'select2',
-                'entity' => 'aspek',
-                'attribute' => 'nama',
-                'model' => 'IkamiAdm\Models\Aspek'
+              'type' => 'select2_from_ajax',
+              'name' => 'aspek_id',
+              'entity' => 'aspek',
+              'attribute' => 'nama',
+              'model' => 'IkamiAdm\Models\Aspek',
+              'data_source' => url('admin/api/aspek'),
+              'placeholder' => '-',
+              'minimum_input_length' => 0,
+              'dependencies' => ['area_id'],
+              'method' => 'POST',
+              'include_all_form_fields' => true,
             ],
             [
                 'name' => 'kesiapan_id',
@@ -152,12 +165,25 @@ class PertanyaanCrudController extends CrudController
                 'attribute' => 'nama',
                 'model' => 'IkamiAdm\Models\Pilihan'
             ],
+            // [
+            //     'name' => 'jawaban_0',
+            //     'type' => 'select2',
+            //     'entity' => 'jawaban0',
+            //     'attribute' => 'teks',
+            //     'model' => 'IkamiAdm\Models\Jawaban'
+            // ],
             [
-                'name' => 'jawaban_0',
-                'type' => 'select2',
-                'entity' => 'jawaban0',
-                'attribute' => 'teks',
-                'model' => 'IkamiAdm\Models\Jawaban'
+              'type' => 'select2_from_ajax',
+              'name' => 'jawaban_0',
+              'entity' => 'jawaban0',
+              'attribute' => 'teks',
+              'model' => 'IkamiAdm\Models\Jawaban',
+              'data_source' => url('admin/api/jawaban'),
+              'placeholder' => '-',
+              'minimum_input_length' => 0,
+              'dependencies' => ['pilihan_id'],
+              'method' => 'POST',
+              'include_all_form_fields' => true,
             ],
         ]);
     }
