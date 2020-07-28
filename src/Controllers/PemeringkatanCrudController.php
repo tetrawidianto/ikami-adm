@@ -29,7 +29,42 @@ class PemeringkatanCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->setColumns([
+           [
+               'type' => 'select',
+               'name' => 'kematangan_baru_id',
+               'entity' => 'kematanganBaru',
+               'attribute' => 'nama',
+               'model' => 'IkamiAdm\Models\KematanganBaru',
+            ],
+            [
+               'type' => 'select',
+               'name' => 'kematangan_id',
+               'entity' => 'kematangan',
+               'attribute' => 'nama',
+               'model' => 'IkamiAdm\Models\Kematangan',
+            ],
+            [
+               'type' => 'select',
+               'name' => 'kesiapan_id',
+               'entity' => 'kesiapan',
+               'attribute' => 'nama',
+               'model' => 'IkamiAdm\Models\Kesiapan',
+            ],
+            [
+              'name' => 'jawaban',
+              'type' => 'table',
+              'columns' => [
+                'nilai' => 'Nilai',
+                'jumlah' => 'Jumlah',
+              ]
+            ],
+            [
+                'name' => 'proporsi',
+                'type' => 'text',
+            ]
+        ]);
     }
 
     protected function setupCreateOperation()
@@ -65,8 +100,8 @@ class PemeringkatanCrudController extends CrudController
               'type' => 'table',
               'entity_singular' => 'jawaban',
               'columns' => [
-                'jumlah' => 'Jumlah',
                 'nilai' => 'Nilai',
+                'jumlah' => 'Jumlah',
               ]
             ],
             [

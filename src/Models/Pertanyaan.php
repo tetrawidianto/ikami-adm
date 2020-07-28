@@ -56,4 +56,14 @@ class Pertanyaan extends Model
 
         return $this->nilai_jawaban * $this->kesiapan_id;
     }
+
+    public function area()
+    {
+        return $this->belongsTo('IkamiAdm\Models\Area');
+    }
+
+    public function aspek()
+    {
+        return $this->belongsTo('IkamiAdm\Models\Aspek');
+    }
 }

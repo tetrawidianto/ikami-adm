@@ -29,7 +29,31 @@ class OpiniSistemElCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->setColumns([
+            [
+                'name' => 'kategori_sistem_el_id',
+                'type' => 'select',
+                'entity' => 'kategoriSistemEl',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\KategoriSistemEl'
+            ],
+            [
+                'name' => 'opini_id',
+                'type' => 'select',
+                'entity' => 'opini',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Opini'
+            ],
+            [
+                'name' => 'nilai_min',
+                'type' => 'number',
+            ],
+            [
+                'name' => 'nilai_mak',
+                'type' => 'number',
+            ],
+        ]);
     }
 
     protected function setupCreateOperation()

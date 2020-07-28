@@ -29,7 +29,63 @@ class PertanyaanCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->setColumns([
+            [
+                'name' => 'kode',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'pengantar',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'teks',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'area_id',
+                'type' => 'select',
+                'entity' => 'area',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Area'
+            ],
+            [
+                'name' => 'aspek_id',
+                'type' => 'select',
+                'entity' => 'aspek',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Aspek'
+            ],
+            [
+                'name' => 'kesiapan_id',
+                'type' => 'select',
+                'entity' => 'kesiapan',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Kesiapan'
+            ],
+            [
+                'name' => 'kematangan_id',
+                'type' => 'select',
+                'entity' => 'kematangan',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Kematangan'
+            ],
+            [
+                'name' => 'pilihan_id',
+                'type' => 'select',
+                'entity' => 'pilihan',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Pilihan'
+            ],
+            [
+                'name' => 'jawaban_0',
+                'type' => 'select',
+                'entity' => 'jawaban0',
+                'attribute' => 'teks',
+                'model' => 'IkamiAdm\Models\Jawaban'
+            ],
+        ]);
     }
 
     protected function setupCreateOperation()
@@ -37,11 +93,72 @@ class PertanyaanCrudController extends CrudController
         $this->crud->setValidation(PertanyaanCrudRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->addFields();
     }
 
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    private function addFields()
+    {
+        $this->crud->addFields([
+            [
+                'name' => 'kode',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'pengantar',
+                'type' => 'textarea'
+            ],
+            [
+                'name' => 'teks',
+                'type' => 'textarea'
+            ],
+            [
+                'name' => 'area_id',
+                'type' => 'select2',
+                'entity' => 'area',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Area'
+            ],
+            [
+                'name' => 'aspek_id',
+                'type' => 'select2',
+                'entity' => 'aspek',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Aspek'
+            ],
+            [
+                'name' => 'kesiapan_id',
+                'type' => 'select2',
+                'entity' => 'kesiapan',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Kesiapan'
+            ],
+            [
+                'name' => 'kematangan_id',
+                'type' => 'select2',
+                'entity' => 'kematangan',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Kematangan'
+            ],
+            [
+                'name' => 'pilihan_id',
+                'type' => 'select2',
+                'entity' => 'pilihan',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Pilihan'
+            ],
+            [
+                'name' => 'jawaban_0',
+                'type' => 'select2',
+                'entity' => 'jawaban0',
+                'attribute' => 'teks',
+                'model' => 'IkamiAdm\Models\Jawaban'
+            ],
+        ]);
     }
 }

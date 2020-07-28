@@ -23,4 +23,9 @@ class Penyaringan extends Model
         return $this->belongsTo('IkamiAdm\Models\Jawaban');
     }
 
+    public function pilihan()
+    {
+        return $this->belongsTo('IkamiAdm\Models\Pilihan');
+    }
+
 }
