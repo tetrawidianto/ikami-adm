@@ -13,6 +13,10 @@ class Versi extends Model
 
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'files' => 'array'
+    ];
+
     public function area()
     {
         return $this->belongsToMany('IkamiAdm\Models\Area')->withTimestamps()->orderBy('created_at');
@@ -28,5 +32,14 @@ class Versi extends Model
             'id',
             'area_id'
         );
+    }
+
+    public function setFilesAttribute($value)
+    {
+        $attribute_name = "files";
+        $disk = "public";
+        $destination_path = "versi";
+
+        $this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
     }
 }

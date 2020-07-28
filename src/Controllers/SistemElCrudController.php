@@ -14,10 +14,10 @@ use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 class SistemElCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+    // use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    // use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     public function setup()
     {
@@ -29,7 +29,31 @@ class SistemElCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->setColumns([
+            [
+                'name' => 'penyedia_id',
+                'type' => 'select',
+                'entity' => 'penyedia',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Penyedia'
+            ],
+            [
+                'name' => 'nama',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'deskripsi',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'sektor_id',
+                'type' => 'select',
+                'entity' => 'sektor',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Sektor'
+            ],
+        ]);
     }
 
     protected function setupCreateOperation()
@@ -42,6 +66,35 @@ class SistemElCrudController extends CrudController
 
     protected function setupUpdateOperation()
     {
-        $this->setupCreateOperation();
+        // $this->setupCreateOperation();
+        $this->addFields();
+    }
+
+    private function addFields()
+    {
+        $this->crud->addFields([
+            [
+                'name' => 'penyedia_id',
+                'type' => 'select2',
+                'entity' => 'penyedia',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Penyedia'
+            ],
+            [
+                'name' => 'nama',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'deskripsi',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'sektor_id',
+                'type' => 'select2',
+                'entity' => 'sektor',
+                'attribute' => 'nama',
+                'model' => 'IkamiAdm\Models\Sektor'
+            ],
+        ]);
     }
 }
