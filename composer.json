@@ -10,7 +10,8 @@
     "minimum-stability": "dev",
     "require": {
         "goldspecdigital/laravel-eloquent-uuid": "^7.0",
-        "spatie/laravel-model-status": "dev-master"
+        "spatie/laravel-model-status": "dev-master",
+        "orangehill/iseed": "dev-master"
     },
     "autoload": {
         "psr-4": {

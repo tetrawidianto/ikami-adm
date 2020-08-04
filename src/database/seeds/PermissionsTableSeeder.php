@@ -60,10 +60,10 @@ class PermissionsTableSeeder extends Seeder
             5 => 
             array (
                 'id' => 6,
-                'name' => 'registrasi-asesmen',
+                'name' => 'self-assessment',
                 'guard_name' => 'web',
                 'created_at' => '2020-05-22 06:47:15',
-                'updated_at' => '2020-07-07 00:46:17',
+                'updated_at' => '2020-08-04 09:31:41',
             ),
             6 => 
             array (
@@ -76,10 +76,10 @@ class PermissionsTableSeeder extends Seeder
             7 => 
             array (
                 'id' => 10,
-                'name' => 'penjadwalan-da',
+                'name' => 'monitoring-da',
                 'guard_name' => 'web',
                 'created_at' => '2020-06-15 12:44:50',
-                'updated_at' => '2020-07-11 09:36:16',
+                'updated_at' => '2020-08-04 09:31:52',
             ),
             8 => 
             array (
@@ -88,6 +88,14 @@ class PermissionsTableSeeder extends Seeder
                 'guard_name' => 'web',
                 'created_at' => '2020-07-17 08:42:34',
                 'updated_at' => '2020-07-17 11:12:30',
+            ),
+            9 => 
+            array (
+                'id' => 12,
+                'name' => 'monitoring-va',
+                'guard_name' => 'web',
+                'created_at' => '2020-08-04 09:32:09',
+                'updated_at' => '2020-08-04 09:32:09',
             ),
         ));
         

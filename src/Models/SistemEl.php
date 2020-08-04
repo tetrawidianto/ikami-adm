@@ -50,4 +50,8 @@ class SistemEl extends Model
         return $this->hasOne('IkamiAdm\Models\Asesmen')->where('selesai', true)->latest();
     }
 
+    public function va()
+    {
+        return $this->hasMany('IkamiAdm\Models\Va')->latest();
+    }
 }
