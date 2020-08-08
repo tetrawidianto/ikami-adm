@@ -52,6 +52,6 @@ class SistemEl extends Model
 
     public function va()
     {
-        return $this->hasMany('IkamiAdm\Models\Va')->latest();
+        return $this->hasOne('IkamiAdm\Models\Va')->latest();
     }
 }
