@@ -51,6 +51,7 @@ class IkamiAdmServiceProvider extends ServiceProvider
             __DIR__.'/database/migrations/create_penugasan_table.php' => database_path('migrations/'.date('Y_m_d_His', strtotime('2021-01-17 00:00:28')).'_create_penugasan_table.php'),
             __DIR__.'/database/migrations/create_dokumen_da_table.php' => database_path('migrations/'.date('Y_m_d_His', strtotime('2021-01-17 00:00:29')).'_create_dokumen_da_table.php'),
             __DIR__.'/database/migrations/create_statuses_table.php' => database_path('migrations/'.date('Y_m_d_His', strtotime('2021-01-17 00:00:30')).'_create_statuses_table.php'),
+            __DIR__.'/database/migrations/create_va_table.php' => database_path('migrations/'.date('Y_m_d_His', strtotime('2021-01-17 00:00:31')).'_create_va_table.php'),
         ], 'ikami-adm-migration');
 
         $this->publishes([

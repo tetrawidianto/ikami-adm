@@ -73,7 +73,7 @@ class Asesmen extends Model
     public function getPertanyaan() {
         return $this->versi->pertanyaan()->with(['informasi' => function($query) {
             $query->where('asesmen_id', $this->id);
-        }]);
+        }])->orderBy('id');
     }
 
     public function dokumenDa()

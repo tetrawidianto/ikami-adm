@@ -41,6 +41,9 @@ class CreateInformasiTable extends Migration
                 ->onDelete('cascade');
 
             $table->text('catatan')->nullable();
+
+            $table->boolean('confirm')->default(false);
+            $table->boolean('confirmed')->default(false);
             $table->timestamps();
             $table->unique(['asesmen_id', 'pertanyaan_id']);
         });
